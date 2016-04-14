@@ -185,6 +185,13 @@
 				gp.stopGif();
 				e.preventDefault();
 				e.stopPropagation();
+			}).on('mouseleave', function(e){
+				if(gp.getOption('playOn') == 'hover'){
+					$(this).remove();
+					gp.stopGif();
+					e.preventDefault();
+					e.stopPropagation();
+				}
 			});
 			gp.getOption('onLoad').call(gp.previewElement);
 			
